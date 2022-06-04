@@ -1,26 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <simple-memo bgColor="orange">オレンジ</simple-memo>
+  <simple-memo bgColor="pink">ピンク</simple-memo>
+  <simple-memo bgColor="green">みどり</simple-memo>
+  <simple-memo v-bind:bgColor="inputColor">あなたの入力した色</simple-memo>
+  <div>
+    <span>変えてみて</span>
+    <input type="text" v-model="inputColor" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import SimpleMemo from "./components/SimpleMemo.vue"
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
+  components: { SimpleMemo },
+  data() {
+    return {
+      inputColor: "black",
+    }
   },
-};
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
-</style>
+</script>
